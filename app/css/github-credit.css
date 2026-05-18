@@ -20,3 +20,19 @@
     background: white;
     border-radius: 50%;
 }
+
+@media (max-width: 360px) {
+    .github-box {
+        padding: 5px 5px;
+        font-weight: normal;
+        column-gap: 4px;
+        font-size: 8px;
+        top: 5px;
+        left: 5px;
+    }
+
+    .github-box img {
+        width: 10px;
+        height: 10px;
+    }
+}

@@ -20,3 +20,23 @@
     border-radius: 3px;
     text-align: center;
 }
+
+.image-input:disabled {
+    opacity: 50%;
+}
+
+@media (max-width: 360px) {
+    .image-input-box {
+        width: 80%;
+    }
+
+    .image-input {
+        font-size: 8px;
+        padding: 5px;
+        max-width: 50%;
+    }
+
+    .image-input-label {
+        font-size: 10px;
+    }
+}

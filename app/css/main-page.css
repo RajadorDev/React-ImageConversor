@@ -32,3 +32,14 @@ main h1 {
         height: 100vh;
     }
 }
+
+@media (max-width: 360px) {
+    main {
+        padding: 0;
+        row-gap: 10px;
+    }
+
+    main h1 {
+        font-size: 15px;
+    }
+}

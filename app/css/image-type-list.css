@@ -35,3 +35,11 @@
     border: 1.5px solid rgb(75, 29, 243);
     background-color: rgba(0, 0, 0, 0.041);
 }
+
+@media (max-width: 360px) {
+    .img-radio-container {
+        padding: 4px;
+        font-size: 10px;
+        row-gap: 1.5px;
+    }
+}

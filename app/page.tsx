@@ -19,11 +19,13 @@ export default function Home() {
     } else if (currentInputInfo.type) {
         excludeTypes = [currentInputInfo.type];
     }
+    console.log(currentInputInfo);
     return (
         <main>
             <h1>Image Converter</h1>
 
-            <ImageInput 
+            <ImageInput
+                disabled={currentInputInfo.beingConverted}
                 text="Select an image file" onInput={
                     event => {
                         const result = !currentInputInfo.beingConverted ? onInput(event) : null;
@@ -66,28 +68,28 @@ export default function Home() {
                 loading={currentInputInfo.beingConverted}
             
                 onClick={
-                event => {
-                    if (currentInputInfo.beingConverted || !currentInputInfo.type || !currentInputInfo.convertTypeSelected) {
-                        event.preventDefault();
-                        return;
-                    } 
-                    changeInputInfo({
-                        ...currentInputInfo,
-                        beingConverted: true
-                    });
-                    convertImageFromInput(currentInputInfo).then(
-                        file => {
-                            downloadImage(file);
-                            changeInputInfo({
-                                ...changeInputInfo,
-                                beingConverted: false
-                            });
-                        }
-                    );
-                    
-                }
-            } disable={currentInputInfo.beingConverted || !currentInputInfo.type || !currentInputInfo.convertTypeSelected} text="Convert">
-        </SubmitButton>
+                    event => {
+                        if (currentInputInfo.beingConverted || !currentInputInfo.type || !currentInputInfo.convertTypeSelected) {
+                            event.preventDefault();
+                            return;
+                        } 
+                        changeInputInfo({
+                            ...currentInputInfo,
+                            beingConverted: true
+                        });
+                        convertImageFromInput(currentInputInfo).then(
+                            file => {
+                                downloadImage(file);
+                                changeInputInfo({
+                                    ...currentInputInfo,
+                                    beingConverted: false
+                                });
+                            }
+                        );
+                        
+                    }
+                } disable={currentInputInfo.beingConverted || !currentInputInfo.type || !currentInputInfo.convertTypeSelected} text="Convert">
+            </SubmitButton>
 
         <GitHubCredit/>
         </main>

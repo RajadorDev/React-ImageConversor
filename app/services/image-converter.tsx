@@ -4,7 +4,7 @@ type ImageBlob = {
      readonly file: File
 }
 
-export function downloadImage(file: File) : void {
+export async function downloadImage(file: File) : Promise<void> {
     const url = URL.createObjectURL(file);
 
     const a = document.createElement('a');
