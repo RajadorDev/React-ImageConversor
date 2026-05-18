@@ -1,0 +1,12 @@
+.submit-button {
+    background-color:darkturquoise;
+    color: white;
+    padding: 9px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 2.4px;
+}
+
+.submit-button:disabled {
+    opacity: 50%;
+}

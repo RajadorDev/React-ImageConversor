@@ -1,0 +1,31 @@
+
+
+.image-type-list-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 6px;
+    width: 85%;
+}
+
+.image-type-radio {
+    color: black;
+    display: flex;
+    flex-direction: row;
+}
+
+.img-radio-container.ignore-container {
+    opacity: 50%;
+}
+
+.img-radio-container {
+    display: flex;
+    flex-direction: row;
+    row-gap: 10px;
+    border: 1px solid rgb(105, 102, 102);
+    padding: 6px 20px;
+    justify-content: space-between;
+    font-size: 22px;
+    width: 50%;
+}
