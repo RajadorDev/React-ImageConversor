@@ -36,7 +36,7 @@
     background-color: rgba(0, 0, 0, 0.041);
 }
 
-@media (max-width: 360px) {
+@media (max-width: 360px), (max-height: 768px) {
     .img-radio-container {
         padding: 4px;
         font-size: 10px;

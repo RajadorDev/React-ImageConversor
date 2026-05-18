@@ -21,7 +21,7 @@
     border-radius: 50%;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 360px), (max-height: 768px) {
     .github-box {
         padding: 5px 5px;
         font-weight: normal;

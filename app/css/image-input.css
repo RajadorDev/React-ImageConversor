@@ -25,7 +25,7 @@
     opacity: 50%;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 360px), (max-height: 768px) {
     .image-input-box {
         width: 80%;
     }
