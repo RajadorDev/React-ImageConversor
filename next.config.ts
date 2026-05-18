@@ -7,5 +7,7 @@ const nextConfig: NextConfig = {
 export default nextConfig;
 
 module.exports = {
-  output: 'export'
+  output: 'export',
+  basePath: '/React-ImageConversor',
+  assetPrefix: '/React-ImageConversor/'
 }

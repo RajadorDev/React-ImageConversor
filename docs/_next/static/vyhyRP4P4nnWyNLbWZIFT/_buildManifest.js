@@ -1,7 +1,12 @@
 self.__BUILD_MANIFEST = {
   "__rewrites": {
     "afterFiles": [],
-    "beforeFiles": [],
+    "beforeFiles": [
+      {
+        "source": "/React-ImageConversor//_next/:path+",
+        "destination": "/React-ImageConversor/_next/:path+"
+      }
+    ],
     "fallback": []
   },
   "sortedPages": [
