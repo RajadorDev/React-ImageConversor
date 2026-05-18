@@ -43,4 +43,11 @@
         height: 30px;
         font-size: 10px;
     }
+
+    .loading-submit-button-div {
+        width: 15px;
+        height: 15px;
+        border-width: 1.5px;
+        border-left-width: 1.5px;
+    }
 }
