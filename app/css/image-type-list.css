@@ -32,7 +32,7 @@
 
 .img-radio-container:hover {
     color: rgb(75, 29, 243);
-    border: 1.5px solid rgb(75, 29, 243);
+    border: 1px solid rgb(75, 29, 243);
     background-color: rgba(0, 0, 0, 0.041);
 }
 
