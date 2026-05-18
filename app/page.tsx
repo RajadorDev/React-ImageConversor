@@ -6,31 +6,7 @@ import './css/main-page.css';
 import { useState } from "react";
 import ImageTypeList from "./components/image-type-list";
 import SubmitButton from "./components/submit-button";
-
-function convert(event: React.FormEvent<HTMLInputElement>): void {
-    const files = event.currentTarget.files;
-    if (files !== null && 0 in files) {
-        const file = files[0];
-        const imageType = ImageTypesManager.findImageType(file);
-        if (imageType) {
-            console.log('Image type ' + imageType.displayName);
-            file.bytes().then(
-                bytes => {
-                    console.log('converting to PNG');
-                    ImageTypesManager.get('jpeg')?.convert({
-                        imageType: imageType,
-                        file
-                    },
-                    'jpeg' + file.name + '.jpeg'
-                    ).then(
-                        result => downloadImage(result)
-                    )
-                }
-            )
-            
-        }
-    }
-}
+import GitHubCredit from "./components/github-credit";
 
 export default function Home() {
 
@@ -48,13 +24,20 @@ export default function Home() {
             <h1>Image Converter</h1>
 
             <ImageInput 
-                text="Image file" onInput={
+                text="Select an image file" onInput={
                     event => {
                         const result = !currentInputInfo.beingConverted ? onInput(event) : null;
                         if (result) {
                             changeInputInfo(result);
                         } else {
                             event.preventDefault();
+                            if (currentInputInfo.file) {
+                                delete currentInputInfo.file;
+                                delete currentInputInfo.type;
+                                changeInputInfo({
+                                    ...currentInputInfo
+                                });
+                            }
                         }
                     }
                 } 
@@ -79,22 +62,34 @@ export default function Home() {
 
             </ImageTypeList>
 
-            <SubmitButton onClick={
+            <SubmitButton
+                loading={currentInputInfo.beingConverted}
+            
+                onClick={
                 event => {
                     if (currentInputInfo.beingConverted || !currentInputInfo.type || !currentInputInfo.convertTypeSelected) {
                         event.preventDefault();
                         return;
                     } 
-                    
+                    changeInputInfo({
+                        ...currentInputInfo,
+                        beingConverted: true
+                    });
                     convertImageFromInput(currentInputInfo).then(
                         file => {
                             downloadImage(file);
+                            changeInputInfo({
+                                ...changeInputInfo,
+                                beingConverted: false
+                            });
                         }
                     );
                     
                 }
-            } disable={currentInputInfo.beingConverted || !currentInputInfo.type} text="Convert">
+            } disable={currentInputInfo.beingConverted || !currentInputInfo.type || !currentInputInfo.convertTypeSelected} text="Convert">
         </SubmitButton>
+
+        <GitHubCredit/>
         </main>
     );
 }
