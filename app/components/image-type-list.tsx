@@ -9,7 +9,15 @@ export default function ImageTypeList(props: {exclude: Array<ImageType>, changeS
     for (let type of ImageTypesManager.all()) {
         const ignoreType = props.exclude.includes(type);
         elements.push(
-            <div key={currentkey} className={
+            <div key={currentkey} onClick={
+                event => {
+                    const target = event.currentTarget;
+                    const input = target.getElementsByTagName('input').item(0) as HTMLInputElement;
+                    if (!input.checked) {
+                        input.click();
+                    }
+                }
+            } className={
                 "img-radio-container" + (ignoreType ? ' ignore-container' : '') 
             }>
                 <label htmlFor={type.displayName} className="image-radio-label">
@@ -24,11 +32,7 @@ export default function ImageTypeList(props: {exclude: Array<ImageType>, changeS
                     checked={props.defaultSelected === type} 
                     onChange={
                         event => {
-                            const check = event.currentTarget.checked;
-                            console.log('is check', check);
-                            if (check) {
-                                props.changeSelect(type);
-                            }
+                            props.changeSelect(type);
                         }
                     }
                 />
