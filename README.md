@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# React Image Conversor 🖼️
 
-## Getting Started
+This system converts images of the following types:
 
-First, run the development server:
+- `PNG`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- `JPEG`
+
+- `WEBP`
+
+To any other type listed above.
+
+
+# Installation ✨
+
+To install, first clone the repository into your environment:
+
+```sh
+git clone https://github.com/RajadorDev/React-ImageConversor.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the folder where the project was installed:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+cd React-ImageConversor
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Install the dependencies:
 
-## Learn More
+```sh
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Running ⚡
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Development Environment ⚙️
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Start the Next.js server with WebSocket support:
 
-## Deploy on Vercel
+```sh
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Production Environment ☁️
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- First, create a build of your project
+
+```sh
+npm run build
+```
+
+- Then run it using NPX (you may need to install it)
+
+```sh
+npx create-next-app@latest out
+```
