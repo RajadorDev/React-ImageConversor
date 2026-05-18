@@ -13,9 +13,10 @@
 }
 
 .image-input {
-    background-color: aquamarine;
+    background-color: rgb(75, 29, 243);
     padding: 10px;
-    color: black;
+    color: white;
     font-weight: bold;
     border-radius: 3px;
+    text-align: center;
 }
