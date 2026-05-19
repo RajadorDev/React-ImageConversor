@@ -19,7 +19,6 @@ export default function Home() {
     } else if (currentInputInfo.type) {
         excludeTypes = [currentInputInfo.type];
     }
-    console.log(currentInputInfo);
     return (
         <main>
             <h1>Image Converter</h1>
